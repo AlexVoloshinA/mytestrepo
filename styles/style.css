@@ -101,8 +101,8 @@ ul li a {
     margin: 2rem;
     display: flex;
    
-    height: 20rem;
-    width: 20rem;
+    
+    flex: 0 0 25%;
     flex-direction: column;
     background-color: red;
 }
