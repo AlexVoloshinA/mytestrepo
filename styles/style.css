@@ -17,6 +17,10 @@ html {
 
 }
 
+body{
+    background-color: #eee;
+    
+}
 /*
 ///////////////////////////////////////////////////////
 ////////////////////////////////////HEADER
@@ -25,13 +29,13 @@ html {
 .nav-container{
     display: flex;
     justify-content: space-between;
-    background-color: #eee;
+    background-color: #ccc;
     height: 10vh;
 }
 
 .left-side{
   
-    flex: 0 0 20%;
+    flex: 1 1 20%;
     display: flex;
 }
 
@@ -40,22 +44,24 @@ html {
     flex: 0 0 20%;
     display: flex;
     justify-content: space-between;
+    margin-left: auto;
 
 }
 .right-side__search{
+    
     display: flex;
     align-items: center;
     flex: 0 0 30%;
 }
-ul li {
+.left-side a {
     list-style: none;
    
 }
 
-ul li a:hover {
+.left-side a:hover {
     background-color: #eee;
 }
-ul li a {
+.left-side a {
     background-color: red;
     padding: 3rem;
     text-decoration: none;
@@ -74,9 +80,20 @@ ul li a {
     flex: 0 0 30%;
     display: flex;
     align-items: center;
-    margin-left: auto;
+    
 }
 
+.right-side__main-content a{
+    background-color: red;
+    padding: 3rem 1.5rem;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+.right-side__main-content a:hover{
+    background-color: #eee;
+}
 .searchbox{
     border-radius: .5rem;
     padding: .5rem;
@@ -95,23 +112,27 @@ ul li a {
 
 .main{
     display: flex;
+    height: 80vh;
+    align-items: flex-start;
 }
 
 .item-box{
     margin: 2rem;
     display: flex;
-   
+   padding: .8rem;
+   border-radius: .5rem;
     
-    flex: 0 0 25%;
+   
     flex-direction: column;
-    background-color: red;
+    background-color: rgb(155, 224, 241);
 }
 .image{
     height: auto;
     width: 100%;
+    background-position: cover;
 }
 h2{
-    font-size: 2.5rem;
+    font-size: 2.8rem;
 }
 .short-desc{
 
@@ -128,5 +149,45 @@ h2{
 .btn-info :hover{
     
     background-color: rgb(116, 110, 37);
+   
+}
+
+.price{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.descAndPrice{
+    display: flex;
+    justify-content: space-between;
+}
+.item-buy:active,
+.item-buy:visited{
+    color: black;
+}
+
+.item-buy{
+    height: 20rem;
+    flex: 0 0 25%;
+   
+}
+
+.item-buy__2:active,
+.item-buy__2:visited{
+    color: black;
+}
+
+/*
+
+
+/////////////////////FOOOTER
+
+
+*/
+
+.footer{
+    background-color: red;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
    
 }
