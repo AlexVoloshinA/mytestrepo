@@ -3,7 +3,23 @@
 $connection = mysqli_connect('localhost', 'root', '', 'drinkdb');
 
 ?>
+<?php 
 
+
+if(isset($_POST['findDrink'])){
+    if(isset($_POST['typeDrink'])){
+        $query = "SELECT * FROM drinks WHERE title = '{$_POST['typeDrink']}' ";
+        $result = mysqli_query($connection, $query);
+
+
+        $row = mysqli_fetch_assoc($result);
+
+        
+    }
+}
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -26,9 +42,9 @@ $connection = mysqli_connect('localhost', 'root', '', 'drinkdb');
              
            </div>
            <div class="right-side">
-               <form class="right-side__search" action="">
-                   <input class="searchbox" placeholder="Search for Drink" type="text">
-                   <input type="submit" value="Find">
+               <form class="right-side__search" action="index.php" method="post">
+                   <input name="typeDrink" class="searchbox" placeholder="Search for Drink" type="text">
+                   <input type="submit" name = "findDrink" value="Find">
                </form>
                 <div class="right-side__main-content">
                         <a href="">Login</a>
@@ -47,7 +63,7 @@ $connection = mysqli_connect('localhost', 'root', '', 'drinkdb');
         while($row = mysqli_fetch_assoc($result) ) {
             echo "<div  class='item-buy'>";
             echo "<div class='item-box'>";
-            echo "<a href='' class='item-buy__2'>";
+            echo "<a href='deteils.php?id={$row['drink_id']}' class='item-buy__2'>";
             echo "<img class='image' src='images/{$row['image']}' alt=''>";
             echo "<h2>{$row['title']}</h2>";
             echo "</a>";
