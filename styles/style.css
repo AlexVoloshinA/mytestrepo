@@ -114,6 +114,7 @@ body{
     display: flex;
     height: 80vh;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .item-box{
@@ -121,6 +122,8 @@ body{
     display: flex;
    padding: .8rem;
    border-radius: .5rem;
+   
+    height: auto;
     
    
     flex-direction: column;
@@ -166,7 +169,7 @@ h2{
 }
 
 .item-buy{
-    height: 20rem;
+    
     flex: 0 0 25%;
    
 }

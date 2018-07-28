@@ -19,38 +19,43 @@ $connection = mysqli_connect('localhost', 'root', '', 'drinkdb');
     <header>
         <nav class="nav-container" >
            <div class="left-side">
-                <ul class="left-side__main-content">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Market</a></li>
-                    <li><a href="">About</a></li>
-                </ul>
+                
+                    <a href="">Home</a>
+                    <a href="">Market</a>
+                    <a href="">About</a>
+             
            </div>
            <div class="right-side">
                <form class="right-side__search" action="">
                    <input class="searchbox" placeholder="Search for Drink" type="text">
                    <input type="submit" value="Find">
                </form>
-                <ul class="right-side__main-content">
-                        <li><a href="">Login</a></li>
-                        <li><a href="">Register</a></li>
+                <div class="right-side__main-content">
+                        <a href="">Login</a>
+                        <a href="">Register</a>
                         
-                </ul>
+                </div>
            </div>
         </nav>
     </header>
     <section class="main">
-
-        <?php
+    <?php
         
         $query = "SELECT * FROM drinks ";
         $result = mysqli_query($connection, $query);
 
         while($row = mysqli_fetch_assoc($result) ) {
+            echo "<div  class='item-buy'>";
             echo "<div class='item-box'>";
+            echo "<a href='' class='item-buy__2'>";
             echo "<img class='image' src='images/{$row['image']}' alt=''>";
             echo "<h2>{$row['title']}</h2>";
-            echo "<p class='short-desc'>{$row['short_description']}</p>";
-            echo "<a class='btn-info' href=''>Show More</a>";
+            echo "</a>";
+            echo "<div class='descAndPrice'>";
+            echo "<p class='short-desc'>{$row['short_description']}</p><span class='price'>{$row['price']}$</span>";
+            echo "</div>";
+            echo "<a class='btn-info' href=''>Buy</a>";
+            echo "</div>";
             echo "</div>";
 
         }
@@ -58,7 +63,24 @@ $connection = mysqli_connect('localhost', 'root', '', 'drinkdb');
         
         
         ?>
+
+
+
        
     </section>
+
+
+
+    <footer class="footer">
+        <div class="right">
+            RIGHT
+        </div>
+        <div class="center">
+                RIGHT
+        </div>
+        <div class="left">
+                Left
+        </div>
+    </header>
 </body>
 </html>
